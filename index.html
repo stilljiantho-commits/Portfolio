@@ -1,0 +1,1125 @@
+
+html_code = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jian Ray Espina | Copywriter Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF8F5;
+            --charcoal: #1A1A1A;
+            --warm-gray: #6B6560;
+            --accent: #C4956A;
+            --light-accent: #F5EBE0;
+            --border: #E8E2DB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--warm-gray);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--charcoal);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hire-btn {
+            background: var(--charcoal);
+            color: var(--cream) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .hire-btn:hover {
+            background: var(--accent);
+            color: var(--charcoal) !important;
+        }
+        
+        .hire-btn::after {
+            display: none !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: var(--light-accent);
+            border-radius: 50%;
+            opacity: 0.6;
+            z-index: 0;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-tag {
+            display: inline-block;
+            background: var(--light-accent);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+        
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--charcoal);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--charcoal);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--charcoal);
+        }
+        
+        .hero-right {
+            position: relative;
+        }
+        
+        .hero-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+        
+        .hero-card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .hero-card p {
+            color: var(--warm-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-card .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .stats-bar {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .stat-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--charcoal);
+        }
+        
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: var(--warm-gray);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            background: white;
+        }
+        
+        .portfolio-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .portfolio-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-card.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .portfolio-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-tag {
+            background: var(--light-accent);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .portfolio-audience {
+            font-size: 0.8rem;
+            color: var(--warm-gray);
+        }
+        
+        .portfolio-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .portfolio-card .copy-sample {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .portfolio-card .copy-sample p {
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .portfolio-card .copy-sample .highlight {
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .portfolio-card .copy-sample .cta-mock {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--charcoal);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .portfolio-card .copy-sample .subject-line {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-card .copy-sample .preview-text {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            margin-bottom: 1rem;
+            font-style: normal;
+        }
+        
+        .portfolio-card .copy-sample .email-body {
+            font-style: normal;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .portfolio-card .copy-sample .email-body strong {
+            color: var(--charcoal);
+        }
+        
+        .portfolio-card .copy-sample .email-body ul {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--warm-gray);
+        }
+        
+        .portfolio-card .copy-sample .email-body li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .portfolio-card .copy-sample .email-cta {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        /* Social Media Samples */
+        .social-samples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        
+        .social-card .platform {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+        
+        .social-card .hashtags {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .social-card .ad-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+        }
+        
+        .social-card .ad-badges span {
+            font-size: 0.75rem;
+            background: var(--light-accent);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+        
+        .social-card .ad-cta {
+            display: inline-block;
+            background: var(--charcoal);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--charcoal);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '"';
+            position: absolute;
+            top: -2rem;
+            left: 5%;
+            font-family: 'Playfair Display', serif;
+            font-size: 20rem;
+            color: rgba(255,255,255,0.03);
+            line-height: 1;
+        }
+        
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about h2 em {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .about p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about .philosophy {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: white;
+            text-align: center;
+        }
+        
+        .contact-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--cream);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            border: 1px solid var(--border);
+        }
+        
+        .contact-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-box > p {
+            color: var(--warm-gray);
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--warm-gray);
+        }
+        
+        .contact-item a, .contact-item p {
+            font-weight: 600;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+        
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+        
+        .availability-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #2E7D32;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                margin: 0 auto 2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .stats-bar {
+                justify-content: center;
+            }
+            
+            .hero-right {
+                display: none;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-card.full-width {
+                grid-column: 1;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-samples {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Jian Ray <span>Espina</span></a>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="hire-btn">Hire Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <span class="hero-tag">Available for Immediate Start</span>
+                <h1>Words That <em>Convert.</em><br>Stories That <em>Sell.</em></h1>
+                <p class="hero-subtitle">Copywriter specializing in eCommerce, wellness, and digital marketing. I craft compelling copy for Australian brands that turns readers into customers.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-secondary">Get In Touch</a>
+                </div>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <h4>4+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>50K+</h4>
+                        <p>Words Written</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <p>Deadline Met</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-card">
+                    <div class="hero-card-label">Latest Work</div>
+                    <h3>Finally — Skincare That Works As Hard As You Do.</h3>
+                    <p>Science-backed formulas. Clean ingredients. Real results — without the overwhelm. Landing page copy for an Australian wellness brand.</p>
+                    <a href="#portfolio" class="cta-btn">See Full Portfolio →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header fade-in">
+            <span class="section-tag">Selected Work</span>
+            <h2>Writing That Drives Results</h2>
+            <p>A curated selection of copy across landing pages, email campaigns, social media, and blog content — all crafted for Australian audiences.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Sample 1: Landing Page -->
+            <div class="portfolio-card full-width fade-in">
+                <div class="portfolio-meta">
+                    <span class="portfolio-tag">Landing Page</span>
+                    <span class="portfolio-audience">eCommerce / Wellness | Australian Women 25–45</span>
+                </div>
+                <h3>Finally — Skincare That Works As Hard As You Do.</h3>
+                <div class="copy-sample">
+                    <p><span class="highlight">Science-backed formulas. Clean ingredients. Real results — without the overwhelm.</span></p>
+                    <p style="margin-top: 1rem; font-style: normal; color: var(--warm-gray);">You deserve a routine that actually fits your life. Not 12 steps. Not complicated. Just effective, Australian-made skincare designed for real women — formulated with dermatologist-approved ingredients and zero harmful fillers. Whether your skin is dry, oily, sensitive, or somewhere in between, we have one goal: to make your skin feel like the best version of itself.</p>
+                    <p style="margin-top: 1rem; font-weight: 600; font-style: normal;">Join 50,000+ women who have switched to smarter skincare.</p>
+                    <span class="cta-mock">Shop The Collection</span>
+                </div>
+            </div>
+            
+            <!-- Sample 2: Email Campaign -->
+            <div class="portfolio-card full-width fade-in">
+                <div class="portfolio-meta">
+                    <span class="portfolio-tag">Email Marketing</span>
+                    <span class="portfolio-audience">Australian Online Clothing Store | Promotional</span>
+                </div>
+                <h3>Your wardrobe called. It wants an upgrade. 👗</h3>
+                <div class="copy-sample">
+                    <div class="subject-line">Subject: Your wardrobe called. It wants an upgrade. 👗</div>
+                    <div class="preview-text">Preview: 30% off everything — but only until Sunday.</div>
+                    <div class="email-body">
+                        <p>Hi [First Name],</p>
+                        <p>Let's be honest — we all have that outfit we've been eyeing for weeks. The one you keep adding to your cart and telling yourself "maybe next payday."</p>
+                        <p><strong>Well, next payday is now.</strong></p>
+                        <p>This weekend only, take 30% off everything in our new Autumn Collection — our best yet. Think soft earthy tones, lightweight layering pieces, and effortlessly versatile styles made for real life.</p>
+                        <p><strong>What's selling fast:</strong></p>
+                        <ul>
+                            <li>The bestselling Linen Co-ord Set (now $76 — was $109)</li>
+                            <li>Our new Caramel Knit Pullover (already restocked twice)</li>
+                            <li>The Date Night Wrap Dress that reviewers can't stop talking about</li>
+                        </ul>
+                        <p><strong>Use code: AUTUMN30 at checkout.</strong></p>
+                        <p>This offer ends Sunday at midnight. No extensions. No exceptions. Just great fashion at a price that makes saying yes very easy.</p>
+                        <a href="#" class="email-cta">Shop The Sale Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sample 3: Social Media -->
+            <div class="portfolio-card full-width fade-in">
+                <div class="portfolio-meta">
+                    <span class="portfolio-tag">Social Media</span>
+                    <span class="portfolio-audience">Australian Coffee Subscription | Instagram + Facebook</span>
+                </div>
+                <h3>Social Copy Pack: From Brand Story to Conversion Ad</h3>
+                <div class="social-samples">
+                    <div class="social-card">
+                        <div class="platform">Instagram — Brand Story</div>
+                        <p>Your morning deserves better than average. ☕ We started [Brand] because we believed great coffee shouldn't require a barista degree or a $700 machine. Just exceptional beans, roasted fresh, delivered to your door before you even run out. Over 15,000 Aussie households now start their mornings with us — and once you taste the difference, you'll understand why. 👇 Try your first bag for just $9.</p>
+                        <div class="hashtags">#AustralianCoffee #CoffeeLovers #SpecialtyCoffee #MorningRoutine #FreshRoasted</div>
+                    </div>
+                    <div class="social-card">
+                        <div class="platform">Facebook — Product Ad</div>
+                        <p>Stop paying $7 for a cup of coffee that took 30 seconds to make. With [Brand], you get single-origin beans sourced directly from ethical farms — roasted fresh each week and shipped straight to you. No middlemen. No markup. Just extraordinary coffee at an honest price.</p>
+                        <div class="ad-badges">
+                            <span>✓ Freshly roasted weekly</span>
+                            <span>✓ Cancel anytime</span>
+                        </div>
+                        <p style="font-weight: 600; margin-top: 0.5rem;">First bag: $9</p>
+                        <a href="#" class="ad-cta">Claim My First Bag</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sample 4: Blog -->
+            <div class="portfolio-card full-width fade-in">
+                <div class="portfolio-meta">
+                    <span class="portfolio-tag">SEO Blog</span>
+                    <span class="portfolio-audience">Small Business Owners | Digital Marketing</span>
+                </div>
+                <h3>7 Digital Marketing Strategies That Actually Work for Small Businesses in 2025</h3>
+                <div class="copy-sample">
+                    <p>You don't need a million-dollar marketing budget to compete online. What you need is the right strategy — and the discipline to execute it consistently.</p>
+                    <p style="margin-top: 1rem; font-style: normal; color: var(--warm-gray);">The digital marketing landscape has never been more crowded. But here's the truth that most agencies won't tell you: <strong style="color: var(--charcoal);">small businesses have a massive advantage.</strong> You're agile, authentic, and capable of building genuine connections that faceless corporations can't replicate.</p>
+                    <p style="margin-top: 1rem; font-style: normal; color: var(--warm-gray);">In this article, we break down seven proven digital marketing strategies that small business owners are using right now to grow their audiences, convert more customers, and build brands people actually love. No fluff. No filler. Just practical, actionable advice that works.</p>
+                    <p style="margin-top: 1rem; font-weight: 700; font-style: normal;">Let's get into it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container fade-in">
+            <span class="section-tag" style="color: var(--accent);">My Philosophy</span>
+            <h2>Good Copy Is Not About Showing Off<br><em>It's About Making Someone Feel Seen.</em></h2>
+            <p>Every piece in this portfolio reflects my commitment to understanding the reader first and writing second. I don't write for algorithms — I write for people. People with problems to solve, desires to fulfill, and decisions to make.</p>
+            <p>Whether it's a landing page that needs to convert, an email that needs to open, or a brand story that needs to resonate, I bring empathy, strategy, and precision to every brief. I've written for wellness brands, fashion retailers, coffee subscriptions, and B2B services — always with the same goal: to make your audience feel understood, and ready to act.</p>
+            <p class="philosophy">"I bring that philosophy to every brief, every brand, and every deadline. I am ready to do the same for your client."</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-header fade-in">
+            <span class="section-tag">What I Do</span>
+            <h2>Services & Expertise</h2>
+            <p>Full-stack copywriting support across every channel your business needs to grow.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card fade-in">
+                <div class="skill-icon">🌐</div>
+                <h3>Website & Landing Pages</h3>
+                <p>Homepage, About, Product pages, and high-converting landing copy that turns visitors into buyers.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">✉️</div>
+                <h3>Email Campaigns</h3>
+                <p>Promotional sequences, welcome flows, newsletters, and abandoned cart recovery that drives revenue.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">📱</div>
+                <h3>Social Media & Ads</h3>
+                <p>Instagram, Facebook, and LinkedIn copy — from organic brand stories to paid conversion ads.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">📝</div>
+                <h3>Blog & SEO Content</h3>
+                <p>Long-form articles optimized for search engines, designed to educate, engage, and rank.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">🛍️</div>
+                <h3>eCommerce Copy</h3>
+                <p>Product descriptions, category pages, and brand voice guides that sell without sounding salesy.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">✏️</div>
+                <h3>Editing & Proofreading</h3>
+                <p>Sharp eyes for clarity, consistency, and grammar. Every word polished to perfection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header fade-in">
+            <span class="section-tag">Let's Talk</span>
+            <h2>Ready to Create Something Great?</h2>
+            <p>I'm available for full-time, remote copywriting engagements. Let's discuss how I can help your Australian client grow.</p>
+        </div>
+        <div class="contact-box fade-in">
+            <h2>Get In Touch</h2>
+            <p>I'm actively looking for my next opportunity and can start immediately.</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <span>Email</span>
+                    <a href="mailto:stilljiantho@gmail.com">stilljiantho@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <span> WhatsApp</span>
+                    <p>+63 916 397 4822</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <span>Location</span>
+                    <p>Philippines (Remote)</p>
+                </div>
+            </div>
+            <div class="availability-badge">
+                <span class="dot"></span>
+                Available for Immediate Start — Full-Time Remote
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Jian Ray Espina. Crafted with care for Australian brands.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>'''
+
+# Save the file
+with open('/mnt/agents/output/jian_ray_espina_portfolio.html', 'w', encoding='utf-8') as f:
+    f.write(html_code)
+
+print("Portfolio website saved successfully!")
+print(f"File size: {len(html_code):,} characters")
